@@ -68,7 +68,13 @@ export default class DaoSelectWindow {
                _this.dataAll.push( { daoId:-2,blockNum:-2,daoName:'UTOKEN',daoSymbol:'utoken',daoDsc:'',daoTime:'',daoManager:'0x'
                    ,daoLogo:'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(_this.utokensvg)))
                    ,osAddress:'0x',tokenId:-2});
-                  obj.forEach(function (v){_this.dataAll.push(v)});
+                  obj.forEach(function (v){
+                      if(!(v['daoLogo']))
+                    {
+                        v['daoLogo']='data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(_this.utokensvg)))
+                      }
+                      _this.dataAll.push(v)
+                    });
 
                
                 for (let i = 0; i < 10; i++) {

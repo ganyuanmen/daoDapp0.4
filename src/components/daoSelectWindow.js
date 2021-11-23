@@ -35,8 +35,14 @@ export default class DaoSelectWindow {
                 _this.model.hide();
             }).appendTo(_this.listBody);
             $('<span></span>').html(v['daoSymbol']).appendTo(_item);
-           // $('<img/>').height(24).width(24).attr('src', 'data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(v['daoLogo'])))).appendTo(_item);
+         if(v['daoLogo'])
+         {
            $('<img/>').height(24).width(24).attr('src',v['daoLogo']).appendTo(_item);
+         }
+           else 
+           {
+           $('<img/>').height(24).width(24).attr('src','data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(_this.utokensvg)))).appendTo(_item);
+           }
         })
     }
 

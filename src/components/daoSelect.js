@@ -25,6 +25,7 @@ export default class DaoSelect {
                   .append('<option value="'+daoId+'" >'+_this.daoManagerWindow.dataAll[i]['daoName']+'('+_this.daoManagerWindow.dataAll[i]['daoSymbol']+')</option>');
               this.viewDiv.empty();
             //  $('<img>').height(32).width(32).attr('src','data:image/svg+xml;base64,' + window.btoa(unescape(encodeURIComponent(_this.daoManagerWindow.dataAll[i]['daoLogo'])))).appendTo(this.viewDiv);
+           if(_this.daoManagerWindow.dataAll[i]['daoLogo'])
             $('<img>').height(32).width(32).attr('src',_this.daoManagerWindow.dataAll[i]['daoLogo']).appendTo(this.viewDiv);
               break;
           }
